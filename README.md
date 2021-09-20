@@ -62,7 +62,7 @@ Hasil :
 
 ### No 5 : Mengikuti perintah pada website `portal.ichimarumaru.tech` dengan melakukan login dengan username dan password yang sudah ditetapkan.
 Step :
-. Membuka .pcap file
+1. Membuka .pcap file
 2. Mengetikkan filter `mysql.query`
 3. Memilih satu-satu packet dan melihat detail 'MySQL Protocol' paketnya
 4. Menemukan paket yang memiliki keterangan INSERT
@@ -74,3 +74,64 @@ Hasil :
 ![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No5-2.png)
 
 ![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No5-3.png)
+
+### No 6 : Cari username dan password ketika login ke FTP Server
+Step : 
+1. Membuka .pcap file
+2. Mengetikkan filter `ftp.request.command == USER || ftp.request.command == PASS`
+
+Hasil :
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No6.png)
+
+### No 7 : Ada 500 file zip yang disimpan ke FTP Server dengan nama 0.zip, 1.zip, 2.zip, ..., 499.zip. Simpan dan Buka file pdf tersebut. (Hint = nama pdf-nya "Real.pdf")
+Step :
+1. Membuka .pcap file
+2. Mengetikkan filter `ftp.data.contains 'Real.pdf'`
+3. Klik Kanan -> Follow -> TCP Stream
+4. Show raw data -> Save as..
+
+Hasil :
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No7-1.png)
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No7-2.png)
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No7-3.png)
+
+### No 8 : Cari paket yang menunjukan pengambilan file dari FTP tersebut
+Step : 
+1. Membuka .pcap file.
+2. Mengetikkan filter `ftp.request.command == RETR`
+
+Hasil :
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No8.png)
+
+### No 9 : Dari paket-paket yang menuju FTP terdapat inidkasi penyimpanan beberapa file. Salah satunya adalah sebuah file berisi data rahasia dengan nama "secret.zip". Simpan dan buka file tersebut
+Step :
+1. Membuka .pcap file
+2. Mengetikkan filter `ftp-data`
+3. Pada paket secret.zip klik kanan -> follow -> TCP Stream
+4. Save as Raw
+
+Hasil :
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No9-1.png)
+
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No9-2.png)
+
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No9-3.png)
+
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No9-4.png)
+
+### No 10 : Selain itu terdapat "history.txt" yang kemungkinan berisi history bash server tersebut! Gunakan isi dari "history.txt" untuk menemukan password untuk membuka file rahasia yang ada di "secret.zip"
+Step :
+1. Buka .pcap file
+2. Karena data yang dicari mengandung secret.zip maka mengetikkan filter `ftp-data contains secret.zip`
+3. Command bash yang ditemukan dari packet secret.zip ditemukan pada file bukanapaapa.txt
+4. Masukka filter baru `ftp-data`
+5. Cari packet yang memuat 'bukanapaapa.txt'
+6. Setelah menemukan buka line-based text data pada informasi paket dan cari passwordnya
+7. Password ditemukan yaitu; d1b1langbukanapaapajugagapercaya
+
+Hasil :
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No10-1.png)
+
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No10-2.png)
+
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No10-3.png)
