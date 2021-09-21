@@ -135,3 +135,18 @@ Hasil :
 ![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No10-2.png)
 
 ![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No10-3.png)
+
+### No 11 : Filter sehingga wireshark hanya mengambil paket yang berasal dari port 80!
+Step : Mencari basic authentication pada packet
+1. Mengetik `src port 80` pada filter
+![img](img/No11.png)
+
+### No 12 : Filter sehingga wireshark hanya mengambil paket yang mengandung port 21!
+Step : Mencari basic authentication pada packet
+1. Mengetik `src port 21` pada filter
+![img](img/No12.png)
+
+### No 13 : Filter sehingga wireshark hanya menampilkan paket yang menuju port 443!
+Step : Mencari basic authentication pada packet
+1. Mengetik `dst port 443` pada filter
+![img](img/No13.png)
