@@ -98,7 +98,7 @@ Hasil :
 ### No 8 : Cari paket yang menunjukan pengambilan file dari FTP tersebut
 Step : 
 1. Membuka .pcap file.
-2. Mengetikkan filter `ftp.request.command == RETR`
+2. Mengetikkan filter `ftp.request.command == STOR`
 
 Hasil :
 ![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No8.png)
