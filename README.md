@@ -150,3 +150,21 @@ Step : Mencari basic authentication pada packet
 Step : Mencari basic authentication pada packet
 1. Mengetik `dst port 443` pada filter
 ![img](img/No13.png)
+
+### No 14 : Filter sehingga wireshark hanya mengambil paket yang tujuannya ke kemenag.go.id!
+Step :
+1. Mengetik `dst host kemenag.go.id` pada filter
+ ![img](img/No14.png)
+
+### No 15 : Filter sehingga wireshark hanya mengambil paket yang berasal dari ip kalian!
+Step :
+1. IP dapat dilihat terlebih dahulu di command prompt menggunakan ipconfig
+2. Mengetik `src host 192.168.73.79`
+![img](img/No15.png)
+
+
+### Kendala
+- Mungkin kendala pada wifi
+
+
+
