@@ -47,29 +47,26 @@ Hasil :
 ### No 4 : Menemukan paket mySQL yang berisi query SELECT
 Step :
 1. Membuka .pcap file
-2. Mengetikkan filter `mysql.query`
-3. Memilih satu-satu packet dan melihat detail 'MySQL Protocol' paketnya
-4. Menemukan paket yang memiliki keterangan SELECT
+2. Mengetikkan filter `mysql.query && (frame contains "SELECT" || frame contains "select")`
 
 Hasil :
 #### SELECT DATABASE;
-![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No4-1.png)
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No4_rev1.png)
 #### SELECT USERNAME FROM USERS;
-![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No4-2.png)
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No4_rev2.png)
 #### SELECT COUNT( * ) FROM USERS;
 
-![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No4-3.png)
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No4_rev3.png)
 
 ### No 5 : Mengikuti perintah pada website `portal.ichimarumaru.tech` dengan melakukan login dengan username dan password yang sudah ditetapkan.
 Step :
 1. Membuka .pcap file
-2. Mengetikkan filter `mysql.query`
-3. Memilih satu-satu packet dan melihat detail 'MySQL Protocol' paketnya
-4. Menemukan paket yang memiliki keterangan INSERT
-5. Menemukan username dan password pada keterangan query
+2. Mengetikkan filter `mysql.query && (frame contains "INSERT" || frame contains "insert")`
+3. Melihat detail 'MySQL Protocol' paketnya
+4. Menemukan username dan password pada keterangan query
 
 Hasil :
-![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No5-1.png)
+![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No5_rev1.png)
 
 ![alt text](https://github.com/tsnzzhr/Jarkom-Modul-1-B08-2021/blob/main/img/No5-2.png)
 
